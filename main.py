@@ -10,6 +10,10 @@ class student():
     def __init__(self, name, college):
         self.name = name
         self.college = college
+
+    def showdetails(self):
+        print("name is: ", self.name)
+        print("college is: ", self.college)
     ## show student details - homework
 
 @app.route("/") # url - / - homepage
