@@ -30,7 +30,7 @@ def student_details():
         'name': name,
         'college': college
     })
-    message = "Student added"
+    message = "Student add"
     return message
 
 @app.route("/allstudents")
