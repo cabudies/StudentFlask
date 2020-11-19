@@ -5,6 +5,13 @@ app = Flask(__name__) # void main () - entry point
 
 studentsList = []
 
+class student():
+
+    def __init__(self, name, college):
+        self.name = name
+        self.college = college
+    ## show student details - homework
+
 @app.route("/") # url - / - homepage
 def index():
     return render_template("index.html")
@@ -39,10 +46,4 @@ def multiplication(first, second):
 
 if __name__ == "__main__":
     app.run()
-
-
-## full stack
-## front end
-## backend
-
 
