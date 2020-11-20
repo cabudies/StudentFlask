@@ -1,5 +1,6 @@
 
 from flask import Flask, render_template, request # library import
+import json
 
 app = Flask(__name__) # void main () - entry point
 
@@ -16,6 +17,9 @@ class student():
         print("college is: ", self.college)
     ## show student details - homework
 
+
+# s = json.dumps(obj.__dict__)
+
 @app.route("/") # url - / - homepage
 def index():
     return render_template("index.html")
@@ -30,12 +34,13 @@ def value(name):
 def student_details():
     name = request.form['stu_name']
     college = request.form['college']
-    studentsList.append({
-        'name': name,
-        'college': college
-    })
+    obj = student(name, college)
+
+    studentsList.append(obj.__dict__)
     message = "Student add"
     return message
+
+
 
 @app.route("/allstudents")
 def allStudents():
